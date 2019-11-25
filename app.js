@@ -74,7 +74,7 @@ fetch(
             const img = document.createElement('img');
             img.src = animal['photos'][0]['full'];
             const h2 = document.createElement('h2');
-            h2.textContent = `name: ${animal[name]}`;
+            h2.textContent = `name: ${animal['name']}`;
             div.append(img, h2);
             return div
         });
