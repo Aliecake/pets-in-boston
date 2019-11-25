@@ -1,3 +1,5 @@
+import { generateCard } from './card.js';
+
 // Every API is different, but for authorized tasks, all of them require client credentials, which you often get by registering an account with the API provider. The API provider then gives you a key and a secret key. They're usually long hashes.
 const key = "lj1iAqRToK2gMHgmAwB2avnLsXcBrsuaoN3xJ6Nb5pyW99aiRR";
 const secret = "A8PRsLsr7ENPtksbwcL3930PczY36dh2r8m1ah0C";
@@ -71,9 +73,12 @@ fetch(
         console.log("This is the actual pet data", data2);
         const animalsArr = data2.animals.map(animal => {
             const div = document.createElement('div');
+            const fig = document.createElement('figure');
+            fig.className = "image"
             const img = document.createElement('img');
             img.src = animal['photos'][0]['full'];
             const h2 = document.createElement('h2');
+            h2.className = "is-2";
             const anchor = document.createElement('a');
             anchor.href = animal['url'];
             anchor.textContent = `name: ${animal['name']}`;
