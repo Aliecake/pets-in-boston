@@ -5,13 +5,11 @@ export function generateCard({
     url, 
     description
 }) {
-    let dateTime, date;
+    let date;
     if(published){
         const dateI = new Date(published);
-        dateTime = `${dateI.getYear()}-${dateI.getMonth()}-${dateI.getDate()}`;
         date = `${dateI.getMonth()}-${dateI.getDate()}-${dateI.getYear()}`
     } else {
-        dateTime = "unknown";
         date = "unknown";
     }
 	return `
@@ -38,7 +36,7 @@ export function generateCard({
         ${description}.
         
         <br>
-        <time datetime=${dateTime}>Updated: ${date}</time>
+        <time>Updated: ${date}</time>
         </div>
     </div>
     </div>
