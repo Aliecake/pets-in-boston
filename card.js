@@ -1,5 +1,5 @@
 export function generateCard(info) {
-    date = new Date(info["published"])
+    const date = new Date(info["published"])
 	return `
     <div class="card">
     <div class="card-image">
