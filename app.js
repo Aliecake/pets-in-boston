@@ -1,9 +1,11 @@
 // Every API is different, but for authorized tasks, all of them require client credentials, which you often get by registering an account with the API provider. The API provider then gives you a key and a secret key. They're usually long hashes.
-const key = "12345";
-const secret = "abcde";
+const key = "lj1iAqRToK2gMHgmAwB2avnLsXcBrsuaoN3xJ6Nb5pyW99aiRR";
+const secret = "A8PRsLsr7ENPtksbwcL3930PczY36dh2r8m1ah0C";
 
-// This is the organization that we'll eventually request data about
-const org = "blahblah"
+// This is the organization code that we'll eventually request data about- PAWS New England. 
+const org = "RI77";
+// And we'll be looking for info about adoptable pets
+const status = 'adoptable';
 
 // FIRST, you need to request an authorization token from the server.
 
@@ -51,7 +53,7 @@ fetch(
             // The options object
 			{
                 // We don't include a method or body on this second fetch request
-                // But we do need to include headers
+                // But we do need to include and authorization header for the token type and the token itself and a content type header.
 				headers: {
                     // 
 					Authorization: data.token_type + " " + data.access_token,
