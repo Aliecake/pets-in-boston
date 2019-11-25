@@ -71,9 +71,13 @@ fetch(
         console.log("This is the actual pet data", data2);
         data2.animals.forEach(animal => {
             const animalsArr = Object.keys(animal).map(key => {
+                const div = document.createElement('div');
+                const img = document.createElement('img');
+                img.src = animal[photos][0].full;
                 const p = document.createElement('p');
-                p.textContent = `${key}: ${animal[key]}`;
-                return p
+                p.textContent = `${name}: ${animal[name]}`;
+                div.append(img, p);
+                return div
             });
             document.body.append(...animalsArr);
         });
