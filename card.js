@@ -5,8 +5,15 @@ export function generateCard({
     url, 
     description
 }) {
-
-    const date = new Date(published.substring(0,10))
+    let dateTime, date;
+    if(published){
+        const dateI = new Date(published);
+        dateTime = `${dateI.getYear()}-${dateI.getMonth()}-${dateI.getDate()}`;
+        date = `${dateI.getMonth()}-${dateI.getDate()}-${dateI.getYear()}`
+    } else {
+        dateTime = "unknown";
+        date = "unknown";
+    }
 	return `
     <div class="card">
     <div class="card-image">
@@ -31,7 +38,7 @@ export function generateCard({
         ${description}.
         
         <br>
-        <time datetime=${date.getYear()}-${date.getMonth()}-${date.getDate()}>Updated: ${date.getMonth()}-${date.getDate()}-${date.getYear()}</time>
+        <time datetime=${dateTime}>Updated: ${date}</time>
         </div>
     </div>
     </div>
