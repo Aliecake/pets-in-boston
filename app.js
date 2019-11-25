@@ -71,21 +71,14 @@ fetch(
 	.then(function(data2) {
 		// Log the pet data
         console.log("This is the actual pet data", data2);
-        const animalsArr = data2.animals.map(animal => {
-            const div = document.createElement('div');
-            const fig = document.createElement('figure');
-            fig.className = "image"
-            const img = document.createElement('img');
-            img.src = animal['photos'][0]['full'];
-            const h2 = document.createElement('h2');
-            h2.className = "is-2";
-            const anchor = document.createElement('a');
-            anchor.href = animal['url'];
-            anchor.textContent = `name: ${animal['name']}`;
-            h2.append(anchor);
-            div.append(img, h2);
-            return div
-        });
-        document.getElementById('title').after(...animalsArr);
+        let columns = 4;
+        const colArr = [1,2,3,4].map(col => {
+            let section = `<div class="column is-one-quarter-desktop is-half-tablet">`
+            for(let i = 0; i < data2.length / columns; i++){
+                section += generateCard(data2[i]);
+            }
+            section += `</div>`
+            document.getElementById('gallery').append(section);
+        })
     })
 	.catch(error => console.log("something went wrong", error));

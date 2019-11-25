@@ -16,7 +16,7 @@ export function generateCard(info) {
         </div>
         <div class="media-content">
             <p class="title is-4">${info["name"]}</p>
-            <p class="subtitle is-6"><a href=${}  alt=${info["name"]}>Link on Petfinder</a></p>
+            <p class="subtitle is-6"><a href=${info["url"]}  alt=${info["name"]}>Link on Petfinder</a></p>
         </div>
         </div>
 
