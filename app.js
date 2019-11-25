@@ -72,7 +72,7 @@ fetch(
         data2.animals.forEach(animal => {
             const animalsArr = Object.keys(animal).map(key => {
                 const p = document.createElement('p');
-                p.textContent = `<p>${key}: ${animal[key]}</p>`;
+                p.textContent = `${key}: ${animal[key]}`;
                 return p
             });
             document.body.append(...animalsArr);
