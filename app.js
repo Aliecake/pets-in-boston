@@ -73,11 +73,11 @@ fetch(
             const div = document.createElement('div');
             const img = document.createElement('img');
             img.src = animal['photos'][0]['full'];
-            const p = document.createElement('p');
-            p.textContent = `name: ${animal[name]}`;
-            div.append(img, p);
+            const h2 = document.createElement('h2');
+            h2.textContent = `name: ${animal[name]}`;
+            div.append(img, h2);
             return div
         });
-        document.getElementById('title').append(...animalsArr);
+        document.getElementById('title').after(...animalsArr);
     })
 	.catch(error => console.log("something went wrong", error));
