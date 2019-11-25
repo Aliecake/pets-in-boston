@@ -78,6 +78,6 @@ fetch(
             div.append(img, p);
             return div
         });
-        document.body.append(...animalsArr);
+        document.getElementById('title').append(...animalsArr);
     })
 	.catch(error => console.log("something went wrong", error));
