@@ -74,8 +74,8 @@ fetch(
 	.then(data2 => {
 		// Log the pet data
         console.log("This is the actual pet data", data2);
-        
-        const theString = data2.reduce( (acc, animal) => acc += generateCard(animal), '')
+        animals = data2.animals;
+        const theString = animals.reduce( (acc, animal) => acc += generateCard(animal), '')
         console.log(theString);
         
         // DOMParser won't cause images to download until the nodes are inserted into the DOM
