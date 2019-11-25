@@ -74,7 +74,7 @@ fetch(
 	.then(data2 => {
 		// Log the pet data
         console.log("This is the actual pet data", data2);
-        animals = data2.animals;
+        const animals = data2.animals;
         const theString = animals.reduce( (acc, animal) => acc += generateCard(animal), '')
         console.log(theString);
         
