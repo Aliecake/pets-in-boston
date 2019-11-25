@@ -73,26 +73,18 @@ fetch(
 	})
 	.then(data2 => {
 		// Log the pet data
-		console.log("This is the actual pet data", data2);
-        let counter = 0;
-		data2.reduce( (acc, animal, i) => {
-			acc = `<div class="column is-one-quarter-desktop is-half-tablet">`;
-			acc += [1,2,3,4].reduce( (acc, digit, j) => {
-                acc += generateCard(data2[j]);
-                counter +=1
-                return acc;
-            }, '')
-			section += `</div>`;
-            console.log(section);
-        }, '');
-            
-			// DOMParser won't cause images to download until the nodes are inserted into the DOM
-			const parser = new DOMParser();
-			const doc = parser.parseFromString(section, "text/html");
-			const body = doc.body;
-            console.log(body);
-            
-			document.getElementById("gallery").append(body);
-		
+        console.log("This is the actual pet data", data2);
+        
+        const theString = data2.reduce( (acc, animal) => acc += generateCard(animal), '')
+        console.log(theString);
+        
+        // DOMParser won't cause images to download until the nodes are inserted into the DOM
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(theString, "text/html");
+        const body = doc.body;
+        console.log(body);
+        
+        document.getElementById("gallery").append(body);
+    
 	})
 	.catch(error => console.log("something went wrong", error));
