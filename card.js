@@ -11,7 +11,7 @@ export function generateCard({
     <div class="card">
     <div class="card-image">
         <figure class="image is-4by3">
-            <img src=${photos[0]["full"]} alt=${name]}>
+            <img src=${photos[0]["full"]} alt=${name}>
         </figure>
     </div>
     <div class="card-content">
