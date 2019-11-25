@@ -1,0 +1,13 @@
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 15px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}

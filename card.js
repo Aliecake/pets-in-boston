@@ -6,7 +6,7 @@ export function generateCard({
     description
 }) {
 
-    const date = new Date(published)
+    const date = new Date(published.substring(0,10))
 	return `
     <div class="card">
     <div class="card-image">
