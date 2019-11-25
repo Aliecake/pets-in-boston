@@ -33,7 +33,7 @@ fetch(
     // Parse the response as json
 	.then(response => response.json())
 	.then(data => {
-		console.log(data);
+		console.log("This is the authorization token that we requested: ", data);
 
 		// You get back an authorization token that looks like this. In an actual case, the token would be another long hash:
 
@@ -68,6 +68,12 @@ fetch(
 	})
 	.then(function(data2) {
 		// Log the pet data
-		console.log("pets", data2);
-	})
+        console.log("This is the actual pet data", data2);
+        data2.animals.forEach(animal => {
+            const animalsArr = Object.keys(animal).map(key => {
+                return `<p>${key}: ${animal[key]}</p>`
+            });
+            document.body.append(...animalsArr);
+        });
+    })
 	.catch(error => console.log("something went wrong", error));
