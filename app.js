@@ -69,7 +69,7 @@ fetch(
 	.then(function(data2) {
 		// Log the pet data
         console.log("This is the actual pet data", data2);
-        data2.animals.map(animal => {
+        const animalsArr = data2.animals.map(animal => {
             const div = document.createElement('div');
             const img = document.createElement('img');
             img.src = animal['photos'][0]['full'];
