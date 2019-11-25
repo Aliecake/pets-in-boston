@@ -77,8 +77,12 @@ fetch(
             for(let i = 0; i < data2.length / columns; i++){
                 section += generateCard(data2[i]);
             }
-            section += `</div>`
-            document.getElementById('gallery').append(section);
+            section += `</div>`;
+            // DOMParser won't cause images to download until the nodes are inserted into the DOM
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(section, 'text/html');
+            const body = doc.body;
+            document.getElementById('gallery').append(body);
         })
     })
 	.catch(error => console.log("something went wrong", error));
