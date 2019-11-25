@@ -81,10 +81,10 @@ fetch(
         // DOMParser won't cause images to download until the nodes are inserted into the DOM
         const parser = new DOMParser();
         const doc = parser.parseFromString(theString, "text/html");
-        const body = doc.body.body;
-        console.log(body);
+        const string = doc.body.children;
+        console.log(string);
         
-        document.getElementById("gallery").append(body);
+        document.getElementById("gallery").append(...string);
     
 	})
 	.catch(error => console.log("something went wrong", error));
