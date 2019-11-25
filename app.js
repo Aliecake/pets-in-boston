@@ -73,7 +73,7 @@ fetch(
             const animalsArr = Object.keys(animal).map(key => {
                 const div = document.createElement('div');
                 const img = document.createElement('img');
-                img.src = animal[photos][0].full;
+                img.src = animal['photos'][0]['full'];
                 const p = document.createElement('p');
                 p.textContent = `${name}: ${animal[name]}`;
                 div.append(img, p);
