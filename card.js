@@ -1,9 +1,9 @@
 export function generateCard({
     published, 
-    photos, 
     name, 
     url, 
-    description
+    description,
+    photos = [{full: "No_image_3x4.svg.png", small: "No_image_3x4.svg.png"}]
 }) {
     let date;
     if(published){
