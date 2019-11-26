@@ -3,7 +3,7 @@ export function generateCard({
     name, 
     url, 
     description,
-    photos = [{full: "No_image_3x4.svg.png", small: "No_image_3x4.svg.png"}]
+    photos 
 }) {
     let date;
     if(published){
@@ -11,6 +11,9 @@ export function generateCard({
         date = `${dateI.getMonth()}-${dateI.getDate()}-${dateI.getYear()}`
     } else {
         date = "unknown";
+    }
+    if(photos.length === 0){
+        photos.push({full: "No_image_3x4.svg.png", small: "No_image_3x4.svg.png"});
     }
 	return `
     <div class="card">
