@@ -9,7 +9,7 @@
     margin: 15px;
 }
 
-img {
-    width: 300px;
-    height: auto;
+.image img {
+    width: 300px !important;
+    height: auto !important;
 }
