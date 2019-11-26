@@ -13,4 +13,5 @@
 .image img {
     max-width: 300px !important;
     height: auto !important;
+    object-fit: cover !important;
 }
