@@ -1,6 +1,6 @@
 import { generateCard } from "./card.js";
 
-// This script was originally written by 
+// This script was originally written by Chris Ferdinandi. I've modified it a bit.
 
 // In this script, we're using the Fetch API to make a request to Petfinder's API. 
 
@@ -86,7 +86,7 @@ function getPets(){
 			// We don't include a method or body on this second fetch request, but we do need to include an authorization header for the token type and the token itself and a content type header.
 			headers: {
 				//
-				Authorization: data.token_type + " " + data.access_token,
+				Authorization: tokenType + " " + token,
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
 		}
