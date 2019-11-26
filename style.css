@@ -1,17 +1,19 @@
-#gallery {
-    margin: 1em auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+@media screen and (max-width:9999px) {
+	#gallery {
+		margin: 1em auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
 
-.card {
-    margin: 15px;
-    max-width: 400px;
-}
+	.card {
+		margin: 15px;
+		max-width: 400px;
+	}
 
-.image img {
-    max-width: 300px !important;
-    height: auto !important;
-    object-fit: cover !important;
+	img {
+		max-width: 300px !important;
+		height: auto !important;
+		object-fit: cover !important;
+	}
 }
